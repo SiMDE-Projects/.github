@@ -16,7 +16,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been release.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been released.'
 
   on-failure:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been failed to release.'
+          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has failed to release.'
 
   tag:
     needs:
